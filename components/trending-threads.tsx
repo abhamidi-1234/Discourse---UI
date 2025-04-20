@@ -20,7 +20,7 @@ export function TrendingThreads() {
       author: {
         name: "John Doe",
         username: "johndoe",
-        avatar: "/placeholder.svg?text=JD&height=32&width=32",
+        avatar: "/placeholder.svg?text=JD&height=40&width=40",
       },
     },
     {
@@ -34,7 +34,7 @@ export function TrendingThreads() {
       author: {
         name: "Sarah Johnson",
         username: "sarahj",
-        avatar: "/placeholder.svg?text=SJ&height=32&width=32",
+        avatar: "/placeholder.svg?text=SJ&height=40&width=40",
       },
     },
     {
@@ -48,7 +48,7 @@ export function TrendingThreads() {
       author: {
         name: "Alex Chen",
         username: "alexc",
-        avatar: "/placeholder.svg?text=AC&height=32&width=32",
+        avatar: "/placeholder.svg?text=AC&height=40&width=40",
       },
     },
   ]
