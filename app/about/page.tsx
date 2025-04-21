@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { ForumHeader } from "@/components/forum-header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -11,7 +10,7 @@ export default function AboutPage() {
 
       <main className="container px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up">
+          <div className="text-center mb-12 animate-slide-up opacity-100">
             <h1 className="text-4xl font-bold mb-4 text-gradient-primary">About Discourse</h1>
             <p className="text-xl text-muted-foreground">
               A community-driven platform for meaningful discussions and knowledge sharing
@@ -21,7 +20,7 @@ export default function AboutPage() {
           <div className="grid gap-12">
             {/* Our Story Section */}
             <section
-              className="grid md:grid-cols-2 gap-8 items-center animate-slide-up"
+              className="grid md:grid-cols-2 gap-8 items-center animate-slide-up opacity-100"
               style={{ animationDelay: "0.1s" }}
             >
               <div>
@@ -41,18 +40,12 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-                <Image
-                  src="/images/hero-bg.png"
-                  alt="Community discussion"
-                  width={500}
-                  height={300}
-                  className="rounded-lg shadow-lg hover-lift"
-                />
+                <div className="w-full h-64 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg shadow-lg"></div>
               </div>
             </section>
 
             {/* Our Values Section */}
-            <section className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            <section className="animate-slide-up opacity-100" style={{ animationDelay: "0.2s" }}>
               <h2 className="text-2xl font-bold mb-6 text-center">Our Values</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
@@ -87,7 +80,7 @@ export default function AboutPage() {
 
             {/* Community Stats Section */}
             <section
-              className="bg-gradient-cool rounded-2xl p-8 text-white animate-slide-up"
+              className="bg-gradient-cool rounded-2xl p-8 text-white animate-slide-up opacity-100"
               style={{ animationDelay: "0.3s" }}
             >
               <h2 className="text-2xl font-bold mb-8 text-center">Our Community by the Numbers</h2>
@@ -107,7 +100,7 @@ export default function AboutPage() {
             </section>
 
             {/* Join Us Section */}
-            <section className="text-center py-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <section className="text-center py-8 animate-slide-up opacity-100" style={{ animationDelay: "0.4s" }}>
               <h2 className="text-2xl font-bold mb-4">Join Our Community</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 Become part of our growing community today. Share your knowledge, ask questions, and connect with
@@ -125,7 +118,7 @@ export default function AboutPage() {
             </section>
 
             {/* Testimonials */}
-            <section className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
+            <section className="animate-slide-up opacity-100" style={{ animationDelay: "0.5s" }}>
               <h2 className="text-2xl font-bold mb-6 text-center">What Our Members Say</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
@@ -134,14 +127,12 @@ export default function AboutPage() {
                       "Discourse has become my go-to place for thoughtful discussions. The community is incredibly supportive and knowledgeable.",
                     name: "Sarah J.",
                     role: "Software Developer",
-                    avatar: "/images/avatar-2.png",
                   },
                   {
                     quote:
                       "I've learned so much from the discussions here. It's refreshing to find a place where people can disagree respectfully and learn from each other.",
                     name: "Alex C.",
                     role: "UX Designer",
-                    avatar: "/images/avatar-3.png",
                   },
                 ].map((testimonial, i) => (
                   <Card key={i} className="border-0 shadow-md hover-lift">
@@ -151,13 +142,12 @@ export default function AboutPage() {
                         <p className="italic text-muted-foreground">{testimonial.quote}</p>
                       </div>
                       <div className="flex items-center gap-3 mt-4">
-                        <Image
-                          src={testimonial.avatar || "/placeholder.svg"}
-                          alt={testimonial.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full avatar-ring"
-                        />
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold">
+                          {testimonial.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </div>
                         <div>
                           <div className="font-medium">{testimonial.name}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.role}</div>

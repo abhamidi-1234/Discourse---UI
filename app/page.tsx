@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         <div className="container relative z-10 flex flex-col justify-center h-full px-4 py-16">
-          <div className="max-w-3xl animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <div className="max-w-3xl animate-slide-up opacity-100">
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
               Join the conversation at <span className="text-white border-b-2 border-white/70">Discourse</span>
             </h1>
@@ -60,7 +60,7 @@ export default function Home() {
       <main className="container px-4 py-12 md:py-16">
         <div className="flex flex-col gap-16">
           <section className="space-y-8">
-            <div className="flex flex-col gap-2 animate-slide-up">
+            <div className="flex flex-col gap-2 animate-slide-up opacity-100">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Discover what's happening</h2>
               <p className="text-muted-foreground text-lg">
                 Stay updated with the latest discussions and trending topics
@@ -69,7 +69,7 @@ export default function Home() {
 
             <div className="grid gap-6 md:grid-cols-3">
               {/* Trending Card */}
-              <Card className="overflow-hidden shadow-md border-0 card-hover animate-fade-in-delay-1">
+              <Card className="overflow-hidden shadow-md border-0 card-hover opacity-100">
                 <CardHeader className="bg-secondary pb-4">
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <TrendingUp className="h-5 w-5" />
@@ -168,7 +168,7 @@ export default function Home() {
               </Card>
 
               {/* Latest Discussions Card */}
-              <Card className="overflow-hidden shadow-md border-0 card-hover animate-fade-in-delay-2">
+              <Card className="overflow-hidden shadow-md border-0 card-hover opacity-100">
                 <CardHeader className="bg-secondary pb-4">
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <MessageSquare className="h-5 w-5" />
@@ -236,7 +236,7 @@ export default function Home() {
               </Card>
 
               {/* Active Members Card */}
-              <Card className="overflow-hidden shadow-md border-0 card-hover animate-fade-in-delay-3">
+              <Card className="overflow-hidden shadow-md border-0 card-hover opacity-100">
                 <CardHeader className="bg-secondary pb-4">
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <Users className="h-5 w-5" />
@@ -278,7 +278,9 @@ export default function Home() {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <div className="font-medium group-hover:text-primary transition-colors">{user.name}</div>
+                          <div className="font-medium group-hover:text-primary transition-colors duration-300">
+                            {user.name}
+                          </div>
                           <div className="text-xs text-muted-foreground">@{user.username}</div>
                         </div>
                         <div className="text-xs font-medium px-2 py-1 rounded-full bg-secondary text-primary">
@@ -302,7 +304,7 @@ export default function Home() {
           </section>
 
           <section className="space-y-8">
-            <div className="flex items-center justify-between animate-slide-up">
+            <div className="flex items-center justify-between animate-slide-up opacity-100">
               <h2 className="text-3xl font-bold tracking-tight">Categories</h2>
               <Button variant="outline" size="sm" className="group hover-lift">
                 View All
@@ -369,7 +371,7 @@ export default function Home() {
                 <Link
                   key={category.id}
                   href={`/${category.slug}`}
-                  className="group category-card animate-fade-in-delay-1"
+                  className="group category-card opacity-100"
                   style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                 >
                   <Card className="h-full overflow-hidden shadow-md border-0 transition-all duration-300 group-hover:shadow-lg hover-glow">
@@ -399,7 +401,7 @@ export default function Home() {
           </section>
 
           {/* Featured Section */}
-          <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 p-8 md:p-12 animate-slide-up">
+          <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 p-8 md:p-12 animate-slide-up opacity-100">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay"></div>
             <div className="relative z-10 grid gap-8 md:grid-cols-2 items-center">
               <div className="space-y-4">
